@@ -73,6 +73,15 @@ li{
 .button-nav {
     color: var(--blanco);
     font-weight: 500;
+    animation: color-enlaces-navegador linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 100px;
+}
+
+@keyframes color-enlaces-navegador {
+    to {
+        color: var(--azul);
+    }
 }
 
 .titulo-seccion {
@@ -120,19 +129,20 @@ li{
     width: 100%;
     align-items: center;
     height: 6rem;
-    /*background: var(--blanco);*/
-    /*animation: nav-bar-shop linear both;
+    animation: navegador linear both;
     animation-timeline: scroll(root);
-    animation-range: 0 100px;*/
+    animation-range: 0 100px;
 }
 
-/*@keyframes nav-bar-shop {
+@keyframes navegador{
     to {
         background-color: rgba(255, 255, 255, 0.968);
         border-bottom: #f7f7f7 1px solid;
         backdrop-filter: blur(15px);
+        border-top: 1px solid var(--gris);
     }
-}*/
+}
+
 
 .navegador ul{
     list-style:none;
@@ -144,32 +154,18 @@ li{
     align-items:center;
 }
 
-.logo{
-    font-size:1.5rem;
-    color:var(--blanco);
+.logo {
+    font-size: 1.5rem;
+    color: var(--blanco);
+    animation: color-enlaces-navegador linear both;
+    animation-timeline: scroll(root);
+    animation-range: 0 100px;
 }
 
 .texto-rojo {
     color: var(--rojo);
 }
 
-
-/*@media (max-width: 850px) {
-    .navegador {
-        top:auto;
-        bottom: 0;
-        height: 4rem;
-    }
-
-    .contenedor-navegador {
-        justify-content: center;
-    }
-
-    .logo{
-        display:none;
-    }
-}
-*/
 /*main*/
 
 .contenedor-tarjetas {
@@ -321,19 +317,23 @@ li{
         gap:1rem;
     }
 
-
     .navegador {
-        bottom: -999px;
         top: auto;
         height: 5rem;
-        /*background: var(--blanco);*/
-        animation: nav-bar-shop linear both;
+        bottom: -999px;
+        animation: navegador linear both;
         animation-timeline: scroll(root);
         animation-range: 0 100px;
     }
 
-    .button-nav{
-        color:var(--azul);
+    @keyframes navegador {
+        to {
+            background-color: rgba(255, 255, 255, 0.968);
+            border-bottom: #f7f7f7 1px solid;
+            backdrop-filter: blur(15px);
+            border-top: 1px solid var(--gris);
+            bottom:0;
+        }
     }
 
     .contenedor-navegador{
@@ -344,17 +344,15 @@ li{
         display:none;
     }
 
-    @keyframes nav-bar-shop {
-        to {
-            bottom: 0;
-            background-color: rgba(255, 255, 255, 0.968);
-            border-bottom: #f7f7f7 1px solid;
-            backdrop-filter: blur(15px);
-            /*box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.08);*/
-            border-top: 1px solid var(--gris);
-        }
+    .navegador {
+        
     }
+
+    
+    
 }
+
+
 
 @media (max-width: 630px) {
     .contenedor-footer{
