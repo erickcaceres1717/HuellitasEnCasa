@@ -385,6 +385,7 @@ li {
         animation: navegador linear both;
         animation-timeline: scroll(root);
         animation-range: 0 100px;
+        z-index:200;
     }
 
     @keyframes navegador {
